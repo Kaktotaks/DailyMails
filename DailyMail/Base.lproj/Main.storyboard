@@ -12,8 +12,8 @@
         <scene sceneID="973-UE-YAu">
             <objects>
                 <navigationController id="bYw-pa-meR" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hW7-sr-sMy">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="hW7-sr-sMy">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -33,25 +33,41 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="YLj-oD-ah1">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="187" width="414" height="709"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="N7T-wo-PHX"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="qMm-eG-5dY"/>
                                 </connections>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Coc-k6-MaL">
+                                <rect key="frame" x="139.5" y="148" width="135" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="zNQ-NH-zz9"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Viewed"/>
+                                    <segment title="Emailed"/>
+                                </segments>
+                                <connections>
+                                    <action selector="mediaSegmentedChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Yz0-H1-UQy"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="YLj-oD-ah1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5I1-UJ-9HU"/>
+                            <constraint firstItem="Coc-k6-MaL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7UW-jE-ezV"/>
+                            <constraint firstItem="Coc-k6-MaL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="AXN-I4-Ts5"/>
                             <constraint firstItem="YLj-oD-ah1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="GhD-3R-nOw"/>
                             <constraint firstAttribute="bottom" secondItem="YLj-oD-ah1" secondAttribute="bottom" id="Rb8-NL-lVX"/>
-                            <constraint firstItem="YLj-oD-ah1" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="VhU-xi-hJy"/>
+                            <constraint firstItem="YLj-oD-ah1" firstAttribute="top" secondItem="Coc-k6-MaL" secondAttribute="bottom" constant="8" id="psa-dP-R1k"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="D7d-JZ-46W"/>
                     <connections>
+                        <outlet property="mediaSegmentedControl" destination="Coc-k6-MaL" id="sfu-84-H4n"/>
                         <outlet property="tableView" destination="YLj-oD-ah1" id="UPn-zZ-dCs"/>
                     </connections>
                 </viewController>
