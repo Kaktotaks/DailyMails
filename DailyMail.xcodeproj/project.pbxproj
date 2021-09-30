@@ -28,10 +28,8 @@
 		E43F4F2F2703168E0028E3EF /* SharedMediaMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F4F2D2703168E0028E3EF /* SharedMediaMetadata.swift */; };
 		E43F4F36270322B60028E3EF /* MostViewedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F4F34270322B60028E3EF /* MostViewedTableViewCell.swift */; };
 		E43F4F37270322B60028E3EF /* MostViewedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E43F4F35270322B60028E3EF /* MostViewedTableViewCell.xib */; };
-		E43F4F3D270339800028E3EF /* MostEmailedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F4F3B270339800028E3EF /* MostEmailedTableViewCell.swift */; };
-		E43F4F3E270339800028E3EF /* MostEmailedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E43F4F3C270339800028E3EF /* MostEmailedTableViewCell.xib */; };
-		E43F4F41270339A90028E3EF /* MostSharedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F4F3F270339A90028E3EF /* MostSharedTableViewCell.swift */; };
-		E43F4F42270339A90028E3EF /* MostSharedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E43F4F40270339A90028E3EF /* MostSharedTableViewCell.xib */; };
+		E43F4F522705D92A0028E3EF /* MostEmailedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F4F502705D92A0028E3EF /* MostEmailedTableViewCell.swift */; };
+		E43F4F532705D92A0028E3EF /* MostEmailedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E43F4F512705D92A0028E3EF /* MostEmailedTableViewCell.xib */; };
 		F8FC5EA286423B1A3FDCFD65 /* Pods_DailyMail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E86CA96D80E6AEAC1C5EF3 /* Pods_DailyMail.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,10 +60,8 @@
 		E43F4F2D2703168E0028E3EF /* SharedMediaMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedMediaMetadata.swift; sourceTree = "<group>"; };
 		E43F4F34270322B60028E3EF /* MostViewedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostViewedTableViewCell.swift; sourceTree = "<group>"; };
 		E43F4F35270322B60028E3EF /* MostViewedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MostViewedTableViewCell.xib; sourceTree = "<group>"; };
-		E43F4F3B270339800028E3EF /* MostEmailedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostEmailedTableViewCell.swift; sourceTree = "<group>"; };
-		E43F4F3C270339800028E3EF /* MostEmailedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MostEmailedTableViewCell.xib; sourceTree = "<group>"; };
-		E43F4F3F270339A90028E3EF /* MostSharedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostSharedTableViewCell.swift; sourceTree = "<group>"; };
-		E43F4F40270339A90028E3EF /* MostSharedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MostSharedTableViewCell.xib; sourceTree = "<group>"; };
+		E43F4F502705D92A0028E3EF /* MostEmailedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostEmailedTableViewCell.swift; sourceTree = "<group>"; };
+		E43F4F512705D92A0028E3EF /* MostEmailedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MostEmailedTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +127,6 @@
 		E43F4F04270307970028E3EF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E43F4F06270307D70028E3EF /* RealmModels */,
 				E43F4F05270307B90028E3EF /* NetworkModels */,
 			);
 			path = Models;
@@ -145,13 +140,6 @@
 				E43F4F1927030CFF0028E3EF /* MostShared */,
 			);
 			path = NetworkModels;
-			sourceTree = "<group>";
-		};
-		E43F4F06270307D70028E3EF /* RealmModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = RealmModels;
 			sourceTree = "<group>";
 		};
 		E43F4F1727030BB50028E3EF /* Views */ = {
@@ -235,8 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				E43F4F38270329460028E3EF /* CustomMostViewed */,
-				E43F4F39270338220028E3EF /* CustomMostEmailed */,
-				E43F4F3A270338250028E3EF /* CustomMostShared */,
+				E43F4F4B2705D8D00028E3EF /* CustomMostEmailed */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -250,22 +237,13 @@
 			path = CustomMostViewed;
 			sourceTree = "<group>";
 		};
-		E43F4F39270338220028E3EF /* CustomMostEmailed */ = {
+		E43F4F4B2705D8D00028E3EF /* CustomMostEmailed */ = {
 			isa = PBXGroup;
 			children = (
-				E43F4F3B270339800028E3EF /* MostEmailedTableViewCell.swift */,
-				E43F4F3C270339800028E3EF /* MostEmailedTableViewCell.xib */,
+				E43F4F502705D92A0028E3EF /* MostEmailedTableViewCell.swift */,
+				E43F4F512705D92A0028E3EF /* MostEmailedTableViewCell.xib */,
 			);
 			path = CustomMostEmailed;
-			sourceTree = "<group>";
-		};
-		E43F4F3A270338250028E3EF /* CustomMostShared */ = {
-			isa = PBXGroup;
-			children = (
-				E43F4F3F270339A90028E3EF /* MostSharedTableViewCell.swift */,
-				E43F4F40270339A90028E3EF /* MostSharedTableViewCell.xib */,
-			);
-			path = CustomMostShared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,8 +308,7 @@
 			files = (
 				E43F4EFB270305100028E3EF /* LaunchScreen.storyboard in Resources */,
 				E43F4F37270322B60028E3EF /* MostViewedTableViewCell.xib in Resources */,
-				E43F4F42270339A90028E3EF /* MostSharedTableViewCell.xib in Resources */,
-				E43F4F3E270339800028E3EF /* MostEmailedTableViewCell.xib in Resources */,
+				E43F4F532705D92A0028E3EF /* MostEmailedTableViewCell.xib in Resources */,
 				E43F4EF8270305100028E3EF /* Assets.xcassets in Resources */,
 				E43F4F032703067B0028E3EF /* Podfile in Resources */,
 				E43F4EF62703050E0028E3EF /* Main.storyboard in Resources */,
@@ -394,9 +371,8 @@
 				E43F4F2A270315930028E3EF /* EmailedMedia.swift in Sources */,
 				E43F4EF32703050E0028E3EF /* MediaViewController.swift in Sources */,
 				E43F4F1527030A320028E3EF /* SharedResult.swift in Sources */,
-				E43F4F41270339A90028E3EF /* MostSharedTableViewCell.swift in Sources */,
 				E43F4EEF2703050E0028E3EF /* AppDelegate.swift in Sources */,
-				E43F4F3D270339800028E3EF /* MostEmailedTableViewCell.swift in Sources */,
+				E43F4F522705D92A0028E3EF /* MostEmailedTableViewCell.swift in Sources */,
 				E43F4F2F2703168E0028E3EF /* SharedMediaMetadata.swift in Sources */,
 				E43F4EF12703050E0028E3EF /* SceneDelegate.swift in Sources */,
 				E43F4F22270310AE0028E3EF /* ViewedResult.swift in Sources */,
