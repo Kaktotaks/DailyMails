@@ -17,6 +17,7 @@ class MediaViewController: UIViewController {
     var mostVieweds: [Viewed] = []
 //    var viewedMediaMetadatas: [ViewedMediaMetadata] = []
     var mostEmaileds: [Emailed] = []
+    var mostShareds: [Shared] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,8 @@ class MediaViewController: UIViewController {
         
         self.tableView.register(UINib(nibName: "MostEmailedTableViewCell", bundle: nil), forCellReuseIdentifier: "MostEmailedTableViewCell")
         
+        self.tableView.register(UINib(nibName: "MostSharedTableViewCell", bundle: nil), forCellReuseIdentifier: "MostSharedTableViewCell")
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +37,7 @@ class MediaViewController: UIViewController {
         
         self.requestMostViewed()
         self.requestMostEmailed()
+        self.requestMostShared()
         
     }
     
@@ -63,7 +67,18 @@ class MediaViewController: UIViewController {
         }
     }
     
-    
+    func requestMostShared() {
+        let url = "https://api.nytimes.com/svc/mostpopular/v2/shared/30/facebook.json?api-key=vuIfURUfUeJfm6S5iYK17hxXNBPBOQEz"
+        AF.request(url).responseJSON { responce in
+            
+            let decoder = JSONDecoder()
+            
+            if let data = try? decoder.decode(SharedResult.self, from: responce.data!){
+                self.mostShareds = data.shareds ?? []
+                self.tableView.reloadData()
+            }
+        }
+    }
 }
 
 extension MediaViewController: UITableViewDataSource {
@@ -78,6 +93,8 @@ extension MediaViewController: UITableViewDataSource {
             return self.mostVieweds.count
         case 1:
             return self.mostEmaileds.count
+        case 2:
+            return self.mostShareds.count
         default:
             return 0
         }
@@ -104,6 +121,15 @@ extension MediaViewController: UITableViewDataSource {
 //            let mostEmailedPathString = self.mostEmaileds[indexPath.row].url ?? ""
             mostEmailedCell.mostEmailedConfigureWith(imageURL: URL(string: ""), mostEmailedName: mostEmailedMedia.title, publishedDateText: mostEmailedMedia.published_date)
             return mostEmailedCell
+            
+        case 2:
+            guard let mostSharedCell = tableView.dequeueReusableCell(withIdentifier: "MostSharedTableViewCell", for: indexPath) as? MostSharedTableViewCell else {
+                return UITableViewCell()
+            }
+            let mostSharedMedia = self.mostShareds[indexPath.row]
+//            let mostSharedPathString = self.mostShareds[indexPath.row].url ?? ""
+            mostSharedCell.mostSharedConfigureWith(imageURL: URL(string: ""), mostSharedName: mostSharedMedia.title, publishedDateText: mostSharedMedia.published_date)
+            return mostSharedCell
             
         default:
             return UITableViewCell()

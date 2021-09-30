@@ -41,13 +41,14 @@
                                 </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Coc-k6-MaL">
-                                <rect key="frame" x="139.5" y="148" width="135" height="32"/>
+                                <rect key="frame" x="105.5" y="148" width="203" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="zNQ-NH-zz9"/>
                                 </constraints>
                                 <segments>
                                     <segment title="Viewed"/>
                                     <segment title="Emailed"/>
+                                    <segment title="Shared"/>
                                 </segments>
                                 <connections>
                                     <action selector="mediaSegmentedChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Yz0-H1-UQy"/>

@@ -30,6 +30,8 @@
 		E43F4F37270322B60028E3EF /* MostViewedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E43F4F35270322B60028E3EF /* MostViewedTableViewCell.xib */; };
 		E43F4F522705D92A0028E3EF /* MostEmailedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F4F502705D92A0028E3EF /* MostEmailedTableViewCell.swift */; };
 		E43F4F532705D92A0028E3EF /* MostEmailedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E43F4F512705D92A0028E3EF /* MostEmailedTableViewCell.xib */; };
+		E43F4F662705F2DD0028E3EF /* MostSharedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F4F642705F2DD0028E3EF /* MostSharedTableViewCell.swift */; };
+		E43F4F672705F2DD0028E3EF /* MostSharedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E43F4F652705F2DD0028E3EF /* MostSharedTableViewCell.xib */; };
 		F8FC5EA286423B1A3FDCFD65 /* Pods_DailyMail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E86CA96D80E6AEAC1C5EF3 /* Pods_DailyMail.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +64,8 @@
 		E43F4F35270322B60028E3EF /* MostViewedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MostViewedTableViewCell.xib; sourceTree = "<group>"; };
 		E43F4F502705D92A0028E3EF /* MostEmailedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostEmailedTableViewCell.swift; sourceTree = "<group>"; };
 		E43F4F512705D92A0028E3EF /* MostEmailedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MostEmailedTableViewCell.xib; sourceTree = "<group>"; };
+		E43F4F642705F2DD0028E3EF /* MostSharedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostSharedTableViewCell.swift; sourceTree = "<group>"; };
+		E43F4F652705F2DD0028E3EF /* MostSharedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MostSharedTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +228,7 @@
 			children = (
 				E43F4F38270329460028E3EF /* CustomMostViewed */,
 				E43F4F4B2705D8D00028E3EF /* CustomMostEmailed */,
+				E43F4F592705F2100028E3EF /* CustomMostShared */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -244,6 +249,15 @@
 				E43F4F512705D92A0028E3EF /* MostEmailedTableViewCell.xib */,
 			);
 			path = CustomMostEmailed;
+			sourceTree = "<group>";
+		};
+		E43F4F592705F2100028E3EF /* CustomMostShared */ = {
+			isa = PBXGroup;
+			children = (
+				E43F4F642705F2DD0028E3EF /* MostSharedTableViewCell.swift */,
+				E43F4F652705F2DD0028E3EF /* MostSharedTableViewCell.xib */,
+			);
+			path = CustomMostShared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +322,7 @@
 			files = (
 				E43F4EFB270305100028E3EF /* LaunchScreen.storyboard in Resources */,
 				E43F4F37270322B60028E3EF /* MostViewedTableViewCell.xib in Resources */,
+				E43F4F672705F2DD0028E3EF /* MostSharedTableViewCell.xib in Resources */,
 				E43F4F532705D92A0028E3EF /* MostEmailedTableViewCell.xib in Resources */,
 				E43F4EF8270305100028E3EF /* Assets.xcassets in Resources */,
 				E43F4F032703067B0028E3EF /* Podfile in Resources */,
@@ -371,6 +386,7 @@
 				E43F4F2A270315930028E3EF /* EmailedMedia.swift in Sources */,
 				E43F4EF32703050E0028E3EF /* MediaViewController.swift in Sources */,
 				E43F4F1527030A320028E3EF /* SharedResult.swift in Sources */,
+				E43F4F662705F2DD0028E3EF /* MostSharedTableViewCell.swift in Sources */,
 				E43F4EEF2703050E0028E3EF /* AppDelegate.swift in Sources */,
 				E43F4F522705D92A0028E3EF /* MostEmailedTableViewCell.swift in Sources */,
 				E43F4F2F2703168E0028E3EF /* SharedMediaMetadata.swift in Sources */,
