@@ -48,6 +48,9 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="publishedDate" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5c-h1-3IX">
                                 <rect key="frame" x="161" y="106" width="381" height="19.5"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19.5" id="eq7-aC-CaO"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -56,6 +59,7 @@
                                 <rect key="frame" x="161" y="133.5" width="381" height="19.5"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="19.5" id="EfO-VQ-3qz"/>
                                     <constraint firstAttribute="height" constant="19.5" id="Upe-Ki-x7q"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
