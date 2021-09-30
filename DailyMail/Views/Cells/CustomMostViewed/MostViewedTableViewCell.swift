@@ -14,17 +14,19 @@ class MostViewedTableViewCell: UITableViewCell {
     @IBOutlet weak var smallPosterImageView: UIImageView!
     @IBOutlet weak var mostViewedTitleLabel: UILabel!
     @IBOutlet weak var mostViewedPublishedDateLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.containerView.layer.cornerRadius = 18
+        self.containerView.layer.cornerRadius = 24
         self.smallPosterImageView.layer.cornerRadius = 18
     }
 
-    func mostViewedConfigureWith(imageURL: URL?, mostViewedName: String?, publishedDateText: String?) {
+    func mostViewedConfigureWith(imageURL: URL?, mostViewedName: String?, publishedDateText: String?, authorName: String? ) {
         self.mostViewedTitleLabel.text = mostViewedName
         self.mostViewedPublishedDateLabel.text = publishedDateText
         self.smallPosterImageView.sd_setImage(with: imageURL, completed: nil)
+        self.authorLabel.text = authorName
     }
 }

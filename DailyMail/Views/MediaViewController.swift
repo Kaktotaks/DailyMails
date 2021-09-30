@@ -15,7 +15,7 @@ class MediaViewController: UIViewController {
     @IBOutlet weak var mediaSegmentedControl: UISegmentedControl!
     
     var mostVieweds: [Viewed] = []
-//    var viewedMediaMetadatas: [ViewedMediaMetadata] = []
+    var viewedMediaMetadatas: [ViewedMediaMetadata] = []
     var mostEmaileds: [Emailed] = []
     var mostShareds: [Shared] = []
     
@@ -109,8 +109,11 @@ extension MediaViewController: UITableViewDataSource {
                 return UITableViewCell()
             }
             let mostViewedMedia = self.mostVieweds[indexPath.row]
-//            let mostViewedPathString = self.mostVieweds[indexPath.row].url ?? ""
-            mostViewedCell.mostViewedConfigureWith(imageURL: URL(string: ""), mostViewedName: mostViewedMedia.title, publishedDateText: mostViewedMedia.published_date)
+//!            let mostViewedPathString = self.viewedMediaMetadatas[indexPath.row].url?.first - хочу подтянуть картинку() по  проперти url : String?, но не выходит 
+            mostViewedCell.mostViewedConfigureWith(imageURL: URL(string: ""),
+                                                   mostViewedName: mostViewedMedia.title,
+                                                   publishedDateText: mostViewedMedia.published_date,
+                                                   authorName: mostViewedMedia.byline)
             return mostViewedCell
             
         case 1:
@@ -118,7 +121,7 @@ extension MediaViewController: UITableViewDataSource {
                 return UITableViewCell()
             }
             let mostEmailedMedia = self.mostEmaileds[indexPath.row]
-//            let mostEmailedPathString = self.mostEmaileds[indexPath.row].url ?? ""
+//!            let mostEmailedPathString = self.mostEmaileds[indexPath.row].url ?? ""
             mostEmailedCell.mostEmailedConfigureWith(imageURL: URL(string: ""), mostEmailedName: mostEmailedMedia.title, publishedDateText: mostEmailedMedia.published_date)
             return mostEmailedCell
             
@@ -127,7 +130,7 @@ extension MediaViewController: UITableViewDataSource {
                 return UITableViewCell()
             }
             let mostSharedMedia = self.mostShareds[indexPath.row]
-//            let mostSharedPathString = self.mostShareds[indexPath.row].url ?? ""
+//!            let mostSharedPathString = self.mostShareds[indexPath.row].url ?? ""
             mostSharedCell.mostSharedConfigureWith(imageURL: URL(string: ""), mostSharedName: mostSharedMedia.title, publishedDateText: mostSharedMedia.published_date)
             return mostSharedCell
             

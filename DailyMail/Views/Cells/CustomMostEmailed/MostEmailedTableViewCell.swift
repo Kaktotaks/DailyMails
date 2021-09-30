@@ -16,7 +16,7 @@ class MostEmailedTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.containerView.layer.cornerRadius = 18
+        self.containerView.layer.cornerRadius = 24
         self.smallPosterImageView.layer.cornerRadius = 18
     }
     
