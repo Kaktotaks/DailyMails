@@ -19,7 +19,6 @@ class MostViewedDetailsViewController: UIViewController {
     @IBOutlet weak var publisherLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     
-    
     let realm = try? Realm()
     var mostViewed: Viewed? = nil
     var mostViewedMedia: ViewedMediaMetadata? = nil
@@ -58,7 +57,7 @@ class MostViewedDetailsViewController: UIViewController {
     }
     
     @IBAction func addToFavouritesButtonPressed(_ sender: Any) {
-        let mostViewedsRealm = MostViewedsRealm()
+        let mostViewedsRealm = MediaRealm()
         
         mostViewedsRealm.byline = self.mostViewed?.byline ?? ""
         mostViewedsRealm.updated = self.mostViewed?.updated ?? ""

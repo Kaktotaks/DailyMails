@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class MostViewedsRealm: Object {
+class MediaRealm: Object {
     @objc dynamic var uri: String = ""
     @objc dynamic var url: String = ""
     @objc dynamic var id: Int = 0

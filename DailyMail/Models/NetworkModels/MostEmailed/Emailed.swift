@@ -19,10 +19,6 @@ struct Emailed : Codable {
 	let type : String?
 	let title : String?
 	let abstract : String?
-	let des_facet : [String]?
-	let org_facet : [String]?
-	let per_facet : [String]?
-	let geo_facet : [String]?
 	let eta_id : Int?
 
 	enum CodingKeys: String, CodingKey {
@@ -43,10 +39,6 @@ struct Emailed : Codable {
 		case type = "type"
 		case title = "title"
 		case abstract = "abstract"
-		case des_facet = "des_facet"
-		case org_facet = "org_facet"
-		case per_facet = "per_facet"
-		case geo_facet = "geo_facet"
 		case eta_id = "eta_id"
 	}
 
@@ -68,11 +60,28 @@ struct Emailed : Codable {
 		type = try values.decodeIfPresent(String.self, forKey: .type)
 		title = try values.decodeIfPresent(String.self, forKey: .title)
 		abstract = try values.decodeIfPresent(String.self, forKey: .abstract)
-		des_facet = try values.decodeIfPresent([String].self, forKey: .des_facet)
-		org_facet = try values.decodeIfPresent([String].self, forKey: .org_facet)
-		per_facet = try values.decodeIfPresent([String].self, forKey: .per_facet)
-		geo_facet = try values.decodeIfPresent([String].self, forKey: .geo_facet)
 		eta_id = try values.decodeIfPresent(Int.self, forKey: .eta_id)
 	}
+    
+    
+    init(from mediaRealm: MediaRealm) {
+        self.uri = mediaRealm.uri
+        self.url = mediaRealm.url
+        self.id = mediaRealm.id
+        self.asset_id = mediaRealm.asset_id
+        self.subsection = mediaRealm.subsection
+        self.nytdsection = mediaRealm.nytdsection
+        self.adx_keywords = mediaRealm.adx_keywords
+        self.column = mediaRealm.column
+        self.type = mediaRealm.type
+        self.eta_id = mediaRealm.eta_id
+        self.source = mediaRealm.source
+        self.published_date = mediaRealm.published_date
+        self.updated = mediaRealm.updated
+        self.section = mediaRealm.section
+        self.byline = mediaRealm.byline
+        self.title = mediaRealm.title
+        self.abstract = mediaRealm.abstract
+    }
 
 }
