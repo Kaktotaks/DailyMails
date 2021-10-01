@@ -163,13 +163,13 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRp-C7-QP5">
-                                        <rect key="frame" x="162" y="574.5" width="90" height="31"/>
+                                        <rect key="frame" x="152" y="574.5" width="110" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="31" id="Vd8-WP-kaR"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="vrQ-cq-XZm"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="gray" title="Go to web"/>
+                                        <buttonConfiguration key="configuration" style="gray" image="network" catalog="system" title="Go to web"/>
                                         <connections>
                                             <action selector="goToWebButtonPressed:" destination="M0B-aF-1dn" eventType="touchUpInside" id="rsd-ZL-z4Z"/>
                                         </connections>
@@ -305,13 +305,13 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ydb-Dl-EER">
-                                        <rect key="frame" x="162" y="574.5" width="90" height="31"/>
+                                        <rect key="frame" x="152" y="574.5" width="110" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="31" id="rxu-b8-Hkv"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="ug5-T6-O58"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="gray" title="Go to web"/>
+                                        <buttonConfiguration key="configuration" style="gray" image="network" catalog="system" title="Go to web"/>
                                         <connections>
                                             <action selector="goToWebButtonPressed:" destination="8uP-aR-N2H" eventType="touchUpInside" id="y50-QD-MLq"/>
                                         </connections>
@@ -447,13 +447,13 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d13-RT-VKp">
-                                        <rect key="frame" x="162" y="574.5" width="90" height="31"/>
+                                        <rect key="frame" x="152" y="574.5" width="110" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="mkh-hz-ApP"/>
                                             <constraint firstAttribute="height" constant="31" id="r6X-MF-MQE"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="gray" title="Go to web"/>
+                                        <buttonConfiguration key="configuration" style="gray" image="network" catalog="system" title="Go to web"/>
                                         <connections>
                                             <action selector="goToWebButtonPressed:" destination="82h-ee-Dob" eventType="touchUpInside" id="Tcv-iE-loR"/>
                                         </connections>
@@ -504,6 +504,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="network" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -155,9 +155,9 @@
 		E43F4F1727030BB50028E3EF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E43F4F33270320A90028E3EF /* Cells */,
 				E43F4F73270711890028E3EF /* DetailsViewControllers */,
 				E43F4EF22703050E0028E3EF /* MediaViewController.swift */,
-				E43F4F33270320A90028E3EF /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
