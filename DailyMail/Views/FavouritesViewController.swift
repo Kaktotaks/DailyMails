@@ -48,7 +48,7 @@ class FavouritesViewController: UIViewController {
         private func getMostVieweds() -> [Viewed] {
             
             var mostVieweds: [Viewed] = []
-            guard let mostViewedsResults = realm?.objects(MediaRealm.self) else { return [] }
+            guard let mostViewedsResults = realm?.objects(ViewedRealm.self) else { return [] }
             for view in mostViewedsResults {
                 let codableVieweds = Viewed(from: view)
                 mostVieweds.append(codableVieweds)
@@ -62,7 +62,7 @@ class FavouritesViewController: UIViewController {
         private func getMostEmaileds() -> [Emailed] {
             
             var mostEmaileds: [Emailed] = []
-            guard let mostEmailedsResults = realm?.objects(MediaRealm.self) else { return [] }
+            guard let mostEmailedsResults = realm?.objects(EmailedRealm.self) else { return [] }
             for email in mostEmailedsResults {
                 let codableEmaileds = Emailed(from: email)
                 mostEmaileds.append(codableEmaileds)
@@ -75,7 +75,7 @@ class FavouritesViewController: UIViewController {
         private func getMostShareds() -> [Shared] {
             
             var mostShareds: [Shared] = []
-            guard let mostSharedsResults = realm?.objects(MediaRealm.self) else { return [] }
+            guard let mostSharedsResults = realm?.objects(SharedRealm.self) else { return [] }
             for shared in mostSharedsResults {
                 let codableShareds = Shared(from: shared)
                 mostShareds.append(codableShareds)

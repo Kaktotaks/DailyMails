@@ -63,24 +63,24 @@ struct Shared: Codable {
 		eta_id = try values.decodeIfPresent(Int.self, forKey: .eta_id)
 	}
     
-    init(from mediaRealm: MediaRealm) {
-        self.uri = mediaRealm.uri
-        self.url = mediaRealm.url
-        self.id = mediaRealm.id
-        self.asset_id = mediaRealm.asset_id
-        self.subsection = mediaRealm.subsection
-        self.nytdsection = mediaRealm.nytdsection
-        self.adx_keywords = mediaRealm.adx_keywords
-        self.column = mediaRealm.column
-        self.type = mediaRealm.type
-        self.eta_id = mediaRealm.eta_id
-        self.source = mediaRealm.source
-        self.published_date = mediaRealm.published_date
-        self.updated = mediaRealm.updated
-        self.section = mediaRealm.section
-        self.byline = mediaRealm.byline
-        self.title = mediaRealm.title
-        self.abstract = mediaRealm.abstract
+    init(from sharedRealm: SharedRealm) {
+        self.uri = sharedRealm.uri
+        self.url = sharedRealm.url
+        self.id = sharedRealm.id
+        self.asset_id = sharedRealm.asset_id
+        self.subsection = sharedRealm.subsection
+        self.nytdsection = sharedRealm.nytdsection
+        self.adx_keywords = sharedRealm.adx_keywords
+        self.column = sharedRealm.column
+        self.type = sharedRealm.type
+        self.eta_id = sharedRealm.eta_id
+        self.source = sharedRealm.source
+        self.published_date = sharedRealm.published_date
+        self.updated = sharedRealm.updated
+        self.section = sharedRealm.section
+        self.byline = sharedRealm.byline
+        self.title = sharedRealm.title
+        self.abstract = sharedRealm.abstract
     }
 
 }

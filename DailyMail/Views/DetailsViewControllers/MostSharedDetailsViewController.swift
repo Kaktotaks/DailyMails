@@ -57,7 +57,7 @@ class MostSharedDetailsViewController: UIViewController {
     }
     
     @IBAction func addToFavouritesButtonPressed(_ sender: Any) {
-        let mostSharedsRealm = MediaRealm()
+        let mostSharedsRealm = SharedRealm()
         
         mostSharedsRealm.byline = self.mostShared?.byline ?? ""
         mostSharedsRealm.updated = self.mostShared?.updated ?? ""

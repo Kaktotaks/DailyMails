@@ -63,23 +63,23 @@ struct Viewed : Codable {
         eta_id = try values.decodeIfPresent(Int.self, forKey: .eta_id)
     }
     
-    init(from mediaRealm: MediaRealm) {
-        self.uri = mediaRealm.uri
-        self.url = mediaRealm.url
-        self.id = mediaRealm.id
-        self.asset_id = mediaRealm.asset_id
-        self.subsection = mediaRealm.subsection
-        self.nytdsection = mediaRealm.nytdsection
-        self.adx_keywords = mediaRealm.adx_keywords
-        self.column = mediaRealm.column
-        self.type = mediaRealm.type
-        self.eta_id = mediaRealm.eta_id
-        self.source = mediaRealm.source
-        self.published_date = mediaRealm.published_date
-        self.updated = mediaRealm.updated
-        self.section = mediaRealm.section
-        self.byline = mediaRealm.byline
-        self.title = mediaRealm.title
-        self.abstract = mediaRealm.abstract
+    init(from viewedRealm: ViewedRealm) {
+        self.uri = viewedRealm.uri
+        self.url = viewedRealm.url
+        self.id = viewedRealm.id
+        self.asset_id = viewedRealm.asset_id
+        self.subsection = viewedRealm.subsection
+        self.nytdsection = viewedRealm.nytdsection
+        self.adx_keywords = viewedRealm.adx_keywords
+        self.column = viewedRealm.column
+        self.type = viewedRealm.type
+        self.eta_id = viewedRealm.eta_id
+        self.source = viewedRealm.source
+        self.published_date = viewedRealm.published_date
+        self.updated = viewedRealm.updated
+        self.section = viewedRealm.section
+        self.byline = viewedRealm.byline
+        self.title = viewedRealm.title
+        self.abstract = viewedRealm.abstract
     }
 }

@@ -64,24 +64,24 @@ struct Emailed : Codable {
 	}
     
     
-    init(from mediaRealm: MediaRealm) {
-        self.uri = mediaRealm.uri
-        self.url = mediaRealm.url
-        self.id = mediaRealm.id
-        self.asset_id = mediaRealm.asset_id
-        self.subsection = mediaRealm.subsection
-        self.nytdsection = mediaRealm.nytdsection
-        self.adx_keywords = mediaRealm.adx_keywords
-        self.column = mediaRealm.column
-        self.type = mediaRealm.type
-        self.eta_id = mediaRealm.eta_id
-        self.source = mediaRealm.source
-        self.published_date = mediaRealm.published_date
-        self.updated = mediaRealm.updated
-        self.section = mediaRealm.section
-        self.byline = mediaRealm.byline
-        self.title = mediaRealm.title
-        self.abstract = mediaRealm.abstract
+    init(from emailedRealm: EmailedRealm) {
+        self.uri = emailedRealm.uri
+        self.url = emailedRealm.url
+        self.id = emailedRealm.id
+        self.asset_id = emailedRealm.asset_id
+        self.subsection = emailedRealm.subsection
+        self.nytdsection = emailedRealm.nytdsection
+        self.adx_keywords = emailedRealm.adx_keywords
+        self.column = emailedRealm.column
+        self.type = emailedRealm.type
+        self.eta_id = emailedRealm.eta_id
+        self.source = emailedRealm.source
+        self.published_date = emailedRealm.published_date
+        self.updated = emailedRealm.updated
+        self.section = emailedRealm.section
+        self.byline = emailedRealm.byline
+        self.title = emailedRealm.title
+        self.abstract = emailedRealm.abstract
     }
 
 }

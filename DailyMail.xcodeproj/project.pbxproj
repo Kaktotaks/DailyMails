@@ -36,7 +36,9 @@
 		E43F4F75270712250028E3EF /* MostEmailedDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F4F74270712250028E3EF /* MostEmailedDetailsViewController.swift */; };
 		E43F4F79270715410028E3EF /* MostSharedDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F4F78270715410028E3EF /* MostSharedDetailsViewController.swift */; };
 		E47A51742707592C00C8BD51 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A51732707592C00C8BD51 /* FavouritesViewController.swift */; };
-		E47A517727075FDB00C8BD51 /* MediaRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A517627075FDB00C8BD51 /* MediaRealm.swift */; };
+		E47A517727075FDB00C8BD51 /* ViewedRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A517627075FDB00C8BD51 /* ViewedRealm.swift */; };
+		E47A517F27078C8500C8BD51 /* EmailedRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A517E27078C8500C8BD51 /* EmailedRealm.swift */; };
+		E47A518127078C9300C8BD51 /* SharedRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A518027078C9300C8BD51 /* SharedRealm.swift */; };
 		F8FC5EA286423B1A3FDCFD65 /* Pods_DailyMail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E86CA96D80E6AEAC1C5EF3 /* Pods_DailyMail.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,7 +77,9 @@
 		E43F4F74270712250028E3EF /* MostEmailedDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostEmailedDetailsViewController.swift; sourceTree = "<group>"; };
 		E43F4F78270715410028E3EF /* MostSharedDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostSharedDetailsViewController.swift; sourceTree = "<group>"; };
 		E47A51732707592C00C8BD51 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
-		E47A517627075FDB00C8BD51 /* MediaRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaRealm.swift; sourceTree = "<group>"; };
+		E47A517627075FDB00C8BD51 /* ViewedRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewedRealm.swift; sourceTree = "<group>"; };
+		E47A517E27078C8500C8BD51 /* EmailedRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailedRealm.swift; sourceTree = "<group>"; };
+		E47A518027078C9300C8BD51 /* SharedRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedRealm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,7 +290,9 @@
 		E47A517527075F7F00C8BD51 /* RealmModels */ = {
 			isa = PBXGroup;
 			children = (
-				E47A517627075FDB00C8BD51 /* MediaRealm.swift */,
+				E47A517627075FDB00C8BD51 /* ViewedRealm.swift */,
+				E47A517E27078C8500C8BD51 /* EmailedRealm.swift */,
+				E47A518027078C9300C8BD51 /* SharedRealm.swift */,
 			);
 			path = RealmModels;
 			sourceTree = "<group>";
@@ -425,13 +431,15 @@
 				E43F4EF12703050E0028E3EF /* SceneDelegate.swift in Sources */,
 				E43F4F69270620510028E3EF /* MostViewedDetailsViewController.swift in Sources */,
 				E47A51742707592C00C8BD51 /* FavouritesViewController.swift in Sources */,
+				E47A517F27078C8500C8BD51 /* EmailedRealm.swift in Sources */,
 				E43F4F22270310AE0028E3EF /* ViewedResult.swift in Sources */,
 				E43F4F2B270315930028E3EF /* EmailedMediaMetadata.swift in Sources */,
 				E43F4F23270310AE0028E3EF /* Viewed.swift in Sources */,
 				E43F4F26270314610028E3EF /* ViewedMediaMetadata.swift in Sources */,
 				E43F4F79270715410028E3EF /* MostSharedDetailsViewController.swift in Sources */,
 				E43F4F1E27030EFB0028E3EF /* EmailedResult.swift in Sources */,
-				E47A517727075FDB00C8BD51 /* MediaRealm.swift in Sources */,
+				E47A517727075FDB00C8BD51 /* ViewedRealm.swift in Sources */,
+				E47A518127078C9300C8BD51 /* SharedRealm.swift in Sources */,
 				E43F4F1627030A320028E3EF /* Shared.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

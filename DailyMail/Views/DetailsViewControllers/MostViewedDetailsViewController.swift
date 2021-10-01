@@ -57,7 +57,7 @@ class MostViewedDetailsViewController: UIViewController {
     }
     
     @IBAction func addToFavouritesButtonPressed(_ sender: Any) {
-        let mostViewedsRealm = MediaRealm()
+        let mostViewedsRealm = ViewedRealm()
         
         mostViewedsRealm.byline = self.mostViewed?.byline ?? ""
         mostViewedsRealm.updated = self.mostViewed?.updated ?? ""

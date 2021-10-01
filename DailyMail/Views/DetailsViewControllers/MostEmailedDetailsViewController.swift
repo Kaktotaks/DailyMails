@@ -57,7 +57,7 @@ class MostEmailedDetailsViewController: UIViewController {
     }
     
     @IBAction func addToFavouritesButtonPressed(_ sender: Any) {
-        let mostEmailedsRealm = MediaRealm()
+        let mostEmailedsRealm = EmailedRealm()
         
         mostEmailedsRealm.byline = self.mostEmailed?.byline ?? ""
         mostEmailedsRealm.updated = self.mostEmailed?.updated ?? ""
