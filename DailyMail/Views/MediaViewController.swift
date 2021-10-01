@@ -81,6 +81,7 @@ class MediaViewController: UIViewController {
     }
 }
 
+//MARK: - DataSource for tableView
 extension MediaViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -150,6 +151,7 @@ extension MediaViewController: UITableViewDataSource {
     }
 }
 
+//MARK: - Delegate for tableView
 extension MediaViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -191,4 +193,16 @@ extension MediaViewController: UITableViewDelegate {
         
     }
     
+    //MARK:- Appearing cells animation
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
+    {
+                let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, 0, -100, 0)
+                cell.layer.transform = rotationTransform
+                cell.alpha = 0.5
+        
+        UIView.animate(withDuration: 0.5) {
+            cell.layer.transform = CATransform3DIdentity
+            cell.alpha = 1.0
+        }
+    }
 }
