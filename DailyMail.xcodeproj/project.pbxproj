@@ -35,6 +35,8 @@
 		E43F4F69270620510028E3EF /* MostViewedDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F4F68270620510028E3EF /* MostViewedDetailsViewController.swift */; };
 		E43F4F75270712250028E3EF /* MostEmailedDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F4F74270712250028E3EF /* MostEmailedDetailsViewController.swift */; };
 		E43F4F79270715410028E3EF /* MostSharedDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43F4F78270715410028E3EF /* MostSharedDetailsViewController.swift */; };
+		E47A51742707592C00C8BD51 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A51732707592C00C8BD51 /* FavouritesViewController.swift */; };
+		E47A517727075FDB00C8BD51 /* MostViewedsRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A517627075FDB00C8BD51 /* MostViewedsRealm.swift */; };
 		F8FC5EA286423B1A3FDCFD65 /* Pods_DailyMail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E86CA96D80E6AEAC1C5EF3 /* Pods_DailyMail.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +74,8 @@
 		E43F4F68270620510028E3EF /* MostViewedDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostViewedDetailsViewController.swift; sourceTree = "<group>"; };
 		E43F4F74270712250028E3EF /* MostEmailedDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostEmailedDetailsViewController.swift; sourceTree = "<group>"; };
 		E43F4F78270715410028E3EF /* MostSharedDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostSharedDetailsViewController.swift; sourceTree = "<group>"; };
+		E47A51732707592C00C8BD51 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
+		E47A517627075FDB00C8BD51 /* MostViewedsRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MostViewedsRealm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 		E43F4F04270307970028E3EF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E47A517527075F7F00C8BD51 /* RealmModels */,
 				E43F4F05270307B90028E3EF /* NetworkModels */,
 			);
 			path = Models;
@@ -158,6 +163,7 @@
 				E43F4F33270320A90028E3EF /* Cells */,
 				E43F4F73270711890028E3EF /* DetailsViewControllers */,
 				E43F4EF22703050E0028E3EF /* MediaViewController.swift */,
+				E47A51732707592C00C8BD51 /* FavouritesViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,8 +205,6 @@
 				E43F4F30270317480028E3EF /* ViewedMedia */,
 				E43F4F20270310AE0028E3EF /* ViewedResult.swift */,
 				E43F4F21270310AE0028E3EF /* Viewed.swift */,
-				E43F4F25270314610028E3EF /* ViewedMedia.swift */,
-				E43F4F24270314610028E3EF /* ViewedMediaMetadata.swift */,
 			);
 			path = MostViewed;
 			sourceTree = "<group>";
@@ -208,6 +212,8 @@
 		E43F4F30270317480028E3EF /* ViewedMedia */ = {
 			isa = PBXGroup;
 			children = (
+				E43F4F25270314610028E3EF /* ViewedMedia.swift */,
+				E43F4F24270314610028E3EF /* ViewedMediaMetadata.swift */,
 			);
 			path = ViewedMedia;
 			sourceTree = "<group>";
@@ -275,6 +281,14 @@
 				E43F4F78270715410028E3EF /* MostSharedDetailsViewController.swift */,
 			);
 			path = DetailsViewControllers;
+			sourceTree = "<group>";
+		};
+		E47A517527075F7F00C8BD51 /* RealmModels */ = {
+			isa = PBXGroup;
+			children = (
+				E47A517627075FDB00C8BD51 /* MostViewedsRealm.swift */,
+			);
+			path = RealmModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,12 +424,14 @@
 				E43F4F2F2703168E0028E3EF /* SharedMediaMetadata.swift in Sources */,
 				E43F4EF12703050E0028E3EF /* SceneDelegate.swift in Sources */,
 				E43F4F69270620510028E3EF /* MostViewedDetailsViewController.swift in Sources */,
+				E47A51742707592C00C8BD51 /* FavouritesViewController.swift in Sources */,
 				E43F4F22270310AE0028E3EF /* ViewedResult.swift in Sources */,
 				E43F4F2B270315930028E3EF /* EmailedMediaMetadata.swift in Sources */,
 				E43F4F23270310AE0028E3EF /* Viewed.swift in Sources */,
 				E43F4F26270314610028E3EF /* ViewedMediaMetadata.swift in Sources */,
 				E43F4F79270715410028E3EF /* MostSharedDetailsViewController.swift in Sources */,
 				E43F4F1E27030EFB0028E3EF /* EmailedResult.swift in Sources */,
+				E47A517727075FDB00C8BD51 /* MostViewedsRealm.swift in Sources */,
 				E43F4F1627030A320028E3EF /* Shared.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

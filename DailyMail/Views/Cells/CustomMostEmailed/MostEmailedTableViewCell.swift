@@ -21,7 +21,7 @@ class MostEmailedTableViewCell: UITableViewCell {
         self.smallPosterImageView.layer.cornerRadius = 18
     }
     
-    func mostEmailedConfigureWith(imageURL: URL?, mostEmailedName: String?, publishedDateText: String?, authorName: String?) {
+    func configureWith(imageURL: URL?, mostEmailedName: String?, publishedDateText: String?, authorName: String?) {
         self.mostEmailedTitleLabel.text = mostEmailedName
         self.mostEmailedPublishedDateLabel.text = publishedDateText
         self.smallPosterImageView.sd_setImage(with: imageURL, completed: nil)

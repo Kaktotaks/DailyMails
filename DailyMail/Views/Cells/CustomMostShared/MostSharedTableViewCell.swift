@@ -22,7 +22,7 @@ class MostSharedTableViewCell: UITableViewCell {
         self.smallPosterImageView.layer.cornerRadius = 18
     }
     
-    func mostSharedConfigureWith(imageURL: URL?, mostSharedName: String?, publishedDateText: String?, authorName: String?) {
+    func configureWith(imageURL: URL?, mostSharedName: String?, publishedDateText: String?, authorName: String?) {
         self.mostSharedTitleLabel.text = mostSharedName
         self.mostSharedPublishedDateLabel.text = publishedDateText
         self.smallPosterImageView.sd_setImage(with: imageURL, completed: nil)

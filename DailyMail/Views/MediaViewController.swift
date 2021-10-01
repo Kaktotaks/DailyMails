@@ -15,9 +15,11 @@ class MediaViewController: UIViewController {
     @IBOutlet weak var mediaSegmentedControl: UISegmentedControl!
     
     var mostVieweds: [Viewed] = []
-    var viewedMediaMetadatas: [ViewedMediaMetadata] = []
+//    var viewedMediaMetadatas: [ViewedMediaMetadata] = []
     var mostEmaileds: [Emailed] = []
     var mostShareds: [Shared] = []
+    
+    let realm = try? Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,7 +113,7 @@ extension MediaViewController: UITableViewDataSource {
             }
             let mostViewedMedia = self.mostVieweds[indexPath.row]
 //            let mostViewedPathString = self.viewedMediaMetadatas.first?.url
-            mostViewedCell.mostViewedConfigureWith(imageURL: URL(string: "https://s3-symbol-logo.tradingview.com/new-york-times--600.png"),
+            mostViewedCell.configureWith(imageURL: URL(string: "https://s3-symbol-logo.tradingview.com/new-york-times--600.png"),
                                                    mostViewedName: mostViewedMedia.title,
                                                    publishedDateText: mostViewedMedia.published_date,
                                                    authorName: mostViewedMedia.byline)
@@ -123,7 +125,7 @@ extension MediaViewController: UITableViewDataSource {
             }
             let mostEmailedMedia = self.mostEmaileds[indexPath.row]
 //!            let mostEmailedPathString = self.mostEmaileds[indexPath.row].url ?? ""
-            mostEmailedCell.mostEmailedConfigureWith(imageURL: URL(string: "https://s3-symbol-logo.tradingview.com/new-york-times--600.png"),
+            mostEmailedCell.configureWith(imageURL: URL(string: "https://s3-symbol-logo.tradingview.com/new-york-times--600.png"),
                                                      mostEmailedName: mostEmailedMedia.title,
                                                      publishedDateText: mostEmailedMedia.published_date,
                                                      authorName: mostEmailedMedia.byline)
@@ -135,7 +137,7 @@ extension MediaViewController: UITableViewDataSource {
             }
             let mostSharedMedia = self.mostShareds[indexPath.row]
 //!            let mostSharedPathString = self.mostShareds[indexPath.row].url ?? ""
-            mostSharedCell.mostSharedConfigureWith(imageURL: URL(string: "https://s3-symbol-logo.tradingview.com/new-york-times--600.png"),
+            mostSharedCell.configureWith(imageURL: URL(string: "https://s3-symbol-logo.tradingview.com/new-york-times--600.png"),
                                                    mostSharedName: mostSharedMedia.title,
                                                    publishedDateText: mostSharedMedia.published_date,
                                                    authorName: mostSharedMedia.byline)

@@ -7,7 +7,7 @@
 
 import UIKit
 import SDWebImage
-//import RealmSwift
+import RealmSwift
 import Alamofire
 import SafariServices
 
@@ -20,7 +20,7 @@ class MostViewedDetailsViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     
     
-    
+    let realm = try? Realm()
     var mostViewed: Viewed? = nil
     var mostViewedMedia: ViewedMediaMetadata? = nil
     
@@ -51,6 +51,37 @@ class MostViewedDetailsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.title = mostViewed?.section
+        
+        let logoutBarButtonItem = UIBarButtonItem(title: "+", style: .done, target: self, action: #selector(addToFavouritesButtonPressed))
+
+        self.navigationItem.rightBarButtonItem  = logoutBarButtonItem
+    }
+    
+    @IBAction func addToFavouritesButtonPressed(_ sender: Any) {
+        let mostViewedsRealm = MostViewedsRealm()
+        
+        mostViewedsRealm.byline = self.mostViewed?.byline ?? ""
+        mostViewedsRealm.updated = self.mostViewed?.updated ?? ""
+        mostViewedsRealm.abstract = self.mostViewed?.abstract ?? ""
+        mostViewedsRealm.source = self.mostViewed?.source ?? ""
+        mostViewedsRealm.title = self.mostViewed?.title ?? ""
+        mostViewedsRealm.published_date = self.mostViewed?.published_date ?? ""
+        // Не добавлено только фото
+
+        try? realm?.write {
+            realm?.add(mostViewedsRealm)
+        }
+        self.showAlert()
+    }
+    
+    func showAlert() {
+        let alert = UIAlertController(title: "Post saved in Favourites", message: nil, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok 👌🏽", style: .cancel, handler: { action in
+            print("Tapped Ok 👌🏽")
+        }))
+        
+        present(alert, animated: true)
     }
     
     

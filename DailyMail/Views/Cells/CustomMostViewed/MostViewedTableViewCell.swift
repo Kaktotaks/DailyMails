@@ -23,10 +23,11 @@ class MostViewedTableViewCell: UITableViewCell {
         self.smallPosterImageView.layer.cornerRadius = 18
     }
 
-    func mostViewedConfigureWith(imageURL: URL?, mostViewedName: String?, publishedDateText: String?, authorName: String? ) {
+    func configureWith(imageURL: URL?, mostViewedName: String?, publishedDateText: String?, authorName: String? ) {
         self.mostViewedTitleLabel.text = mostViewedName
         self.mostViewedPublishedDateLabel.text = publishedDateText
         self.smallPosterImageView.sd_setImage(with: imageURL, completed: nil)
         self.authorLabel.text = authorName
     }
+    
 }
