@@ -109,8 +109,8 @@ extension MediaViewController: UITableViewDataSource {
                 return UITableViewCell()
             }
             let mostViewedMedia = self.mostVieweds[indexPath.row]
-//!            let mostViewedPathString = self.viewedMediaMetadatas[indexPath.row].url?.first - хочу подтянуть картинку() по  проперти url : String?, но не выходит 
-            mostViewedCell.mostViewedConfigureWith(imageURL: URL(string: ""),
+            let mostViewedPathString = self.viewedMediaMetadatas.first?.url
+            mostViewedCell.mostViewedConfigureWith(imageURL: URL(string: mostViewedPathString ?? "https://s3-symbol-logo.tradingview.com/new-york-times--600.png"),
                                                    mostViewedName: mostViewedMedia.title,
                                                    publishedDateText: mostViewedMedia.published_date,
                                                    authorName: mostViewedMedia.byline)
@@ -142,6 +142,36 @@ extension MediaViewController: UITableViewDataSource {
     @IBAction func mediaSegmentedChanged(_ sender: UISegmentedControl) {
         self.tableView.reloadData()
     }
+}
+
+extension MediaViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let selectedIndex = self.mediaSegmentedControl.selectedSegmentIndex
+        switch selectedIndex {
+        case 0:
+            let viewedIdentifier = String(describing: MostViewedDetailsViewController.self)
+            
+            if let detailViewController = storyboard.instantiateViewController(identifier: viewedIdentifier) as? MostViewedDetailsViewController {
+                detailViewController.mostViewed = self.mostVieweds[indexPath.row]
+                
+                self.navigationController?.pushViewController(detailViewController, animated: true)
+            }
+        case 1:
+           print("Pushed 1")
+            
+        case 2:
+            print("Pushed 2")
+            
+            
+        default:
+            break
+    
+        }
+        
+    }
+    
 }
 
 // MARK: - Save !

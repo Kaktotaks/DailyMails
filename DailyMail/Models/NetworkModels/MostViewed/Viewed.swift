@@ -23,6 +23,7 @@ struct Viewed : Codable {
 	let org_facet : [String]?
 	let per_facet : [String]?
 	let geo_facet : [String]?
+    let viewedMedia : [ViewedMedia]?
 	let eta_id : Int?
 
 	enum CodingKeys: String, CodingKey {
@@ -47,6 +48,7 @@ struct Viewed : Codable {
 		case org_facet = "org_facet"
 		case per_facet = "per_facet"
 		case geo_facet = "geo_facet"
+        case viewedMedia = "media"
 		case eta_id = "eta_id"
 	}
 
@@ -72,6 +74,7 @@ struct Viewed : Codable {
 		org_facet = try values.decodeIfPresent([String].self, forKey: .org_facet)
 		per_facet = try values.decodeIfPresent([String].self, forKey: .per_facet)
 		geo_facet = try values.decodeIfPresent([String].self, forKey: .geo_facet)
+        viewedMedia = try values.decodeIfPresent([ViewedMedia].self, forKey: .viewedMedia)
 		eta_id = try values.decodeIfPresent(Int.self, forKey: .eta_id)
 	}
 
