@@ -153,8 +153,10 @@ extension MediaViewController: UITableViewDataSource {
 extension MediaViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let selectedIndex = self.mediaSegmentedControl.selectedSegmentIndex
+        
         switch selectedIndex {
         case 0:
             let viewedIdentifier = String(describing: MostViewedDetailsViewController.self)
@@ -165,11 +167,22 @@ extension MediaViewController: UITableViewDelegate {
                 self.navigationController?.pushViewController(detailViewController, animated: true)
             }
         case 1:
-           print("Pushed 1")
+            let emailedIdentifier = String(describing: MostEmailedDetailsViewController.self)
+            
+            if let detailViewController = storyboard.instantiateViewController(identifier: emailedIdentifier) as? MostEmailedDetailsViewController {
+                detailViewController.mostEmailed = self.mostEmaileds[indexPath.row]
+                
+                self.navigationController?.pushViewController(detailViewController, animated: true)
+            }
             
         case 2:
-            print("Pushed 2")
+            let sharedIdentifier = String(describing: MostSharedDetailsViewController.self)
             
+            if let detailViewController = storyboard.instantiateViewController(identifier: sharedIdentifier) as? MostSharedDetailsViewController {
+                detailViewController.mostShared = self.mostShareds[indexPath.row]
+                
+                self.navigationController?.pushViewController(detailViewController, animated: true)
+            }
             
         default:
             break

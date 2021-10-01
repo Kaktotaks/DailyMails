@@ -17,6 +17,7 @@ class MostViewedDetailsViewController: UIViewController {
     @IBOutlet weak var updatedLabel: UILabel!
     @IBOutlet weak var bylineLabel: UILabel!
     @IBOutlet weak var publisherLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     
     
@@ -32,6 +33,7 @@ class MostViewedDetailsViewController: UIViewController {
         self.updatedLabel.text = self.mostViewed?.updated
         self.bylineLabel.text = self.mostViewed?.byline
         self.publisherLabel.text = self.mostViewed?.source
+        self.titleLabel.text = self.mostViewed?.title
     
         if let posterPath = self.mostViewedMedia?.url {
 
@@ -48,7 +50,7 @@ class MostViewedDetailsViewController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        self.title = mostViewed?.title
+        self.title = mostViewed?.section
     }
     
     
