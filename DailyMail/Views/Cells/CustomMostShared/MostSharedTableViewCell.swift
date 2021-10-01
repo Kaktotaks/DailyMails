@@ -13,7 +13,8 @@ class MostSharedTableViewCell: UITableViewCell {
     @IBOutlet weak var smallPosterImageView: UIImageView!
     @IBOutlet weak var mostSharedTitleLabel: UILabel!
     @IBOutlet weak var mostSharedPublishedDateLabel: UILabel!
-
+    @IBOutlet weak var authorLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -21,10 +22,11 @@ class MostSharedTableViewCell: UITableViewCell {
         self.smallPosterImageView.layer.cornerRadius = 18
     }
     
-    func mostSharedConfigureWith(imageURL: URL?, mostSharedName: String?, publishedDateText: String?) {
+    func mostSharedConfigureWith(imageURL: URL?, mostSharedName: String?, publishedDateText: String?, authorName: String?) {
         self.mostSharedTitleLabel.text = mostSharedName
         self.mostSharedPublishedDateLabel.text = publishedDateText
         self.smallPosterImageView.sd_setImage(with: imageURL, completed: nil)
+        self.authorLabel.text = authorName
     }
     
 }

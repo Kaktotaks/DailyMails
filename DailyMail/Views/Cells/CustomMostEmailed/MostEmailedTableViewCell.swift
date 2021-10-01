@@ -12,6 +12,7 @@ class MostEmailedTableViewCell: UITableViewCell {
     @IBOutlet weak var smallPosterImageView: UIImageView!
     @IBOutlet weak var mostEmailedTitleLabel: UILabel!
     @IBOutlet weak var mostEmailedPublishedDateLabel: UILabel!
+    @IBOutlet weak var authorLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,10 +21,11 @@ class MostEmailedTableViewCell: UITableViewCell {
         self.smallPosterImageView.layer.cornerRadius = 18
     }
     
-    func mostEmailedConfigureWith(imageURL: URL?, mostEmailedName: String?, publishedDateText: String?) {
+    func mostEmailedConfigureWith(imageURL: URL?, mostEmailedName: String?, publishedDateText: String?, authorName: String?) {
         self.mostEmailedTitleLabel.text = mostEmailedName
         self.mostEmailedPublishedDateLabel.text = publishedDateText
         self.smallPosterImageView.sd_setImage(with: imageURL, completed: nil)
+        self.authorLabel.text = authorName
     }
     
 }

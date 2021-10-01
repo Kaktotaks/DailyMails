@@ -109,8 +109,8 @@ extension MediaViewController: UITableViewDataSource {
                 return UITableViewCell()
             }
             let mostViewedMedia = self.mostVieweds[indexPath.row]
-            let mostViewedPathString = self.viewedMediaMetadatas.first?.url
-            mostViewedCell.mostViewedConfigureWith(imageURL: URL(string: mostViewedPathString ?? "https://s3-symbol-logo.tradingview.com/new-york-times--600.png"),
+//            let mostViewedPathString = self.viewedMediaMetadatas.first?.url
+            mostViewedCell.mostViewedConfigureWith(imageURL: URL(string: "https://s3-symbol-logo.tradingview.com/new-york-times--600.png"),
                                                    mostViewedName: mostViewedMedia.title,
                                                    publishedDateText: mostViewedMedia.published_date,
                                                    authorName: mostViewedMedia.byline)
@@ -122,7 +122,10 @@ extension MediaViewController: UITableViewDataSource {
             }
             let mostEmailedMedia = self.mostEmaileds[indexPath.row]
 //!            let mostEmailedPathString = self.mostEmaileds[indexPath.row].url ?? ""
-            mostEmailedCell.mostEmailedConfigureWith(imageURL: URL(string: ""), mostEmailedName: mostEmailedMedia.title, publishedDateText: mostEmailedMedia.published_date)
+            mostEmailedCell.mostEmailedConfigureWith(imageURL: URL(string: "https://s3-symbol-logo.tradingview.com/new-york-times--600.png"),
+                                                     mostEmailedName: mostEmailedMedia.title,
+                                                     publishedDateText: mostEmailedMedia.published_date,
+                                                     authorName: mostEmailedMedia.byline)
             return mostEmailedCell
             
         case 2:
@@ -131,7 +134,10 @@ extension MediaViewController: UITableViewDataSource {
             }
             let mostSharedMedia = self.mostShareds[indexPath.row]
 //!            let mostSharedPathString = self.mostShareds[indexPath.row].url ?? ""
-            mostSharedCell.mostSharedConfigureWith(imageURL: URL(string: ""), mostSharedName: mostSharedMedia.title, publishedDateText: mostSharedMedia.published_date)
+            mostSharedCell.mostSharedConfigureWith(imageURL: URL(string: "https://s3-symbol-logo.tradingview.com/new-york-times--600.png"),
+                                                   mostSharedName: mostSharedMedia.title,
+                                                   publishedDateText: mostSharedMedia.published_date,
+                                                   authorName: mostSharedMedia.byline)
             return mostSharedCell
             
         default:
