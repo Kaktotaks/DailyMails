@@ -38,49 +38,22 @@ class MediaViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.requestMostViewed()
-        self.requestMostEmailed()
-        self.requestMostShared()
+        NetworkManager.shared.requestMostViewed(completion: { mostVieweds in
+            self.mostVieweds = mostVieweds
+            self.tableView.reloadData()
+        })
         
-    }
-    
-    func requestMostViewed() {
-        let url = "\(Constants.Network.mostViewedURL)\(Constants.Network.apiKey)"
-        AF.request(url).responseJSON { responce in
-            
-            let decoder = JSONDecoder()
-            
-            if let data = try? decoder.decode(ViewedResult.self, from: responce.data!){
-                self.mostVieweds = data.vieweds ?? []
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
-    func requestMostEmailed() {
-        let url = "\(Constants.Network.mostEmailedURL)\(Constants.Network.apiKey)"
-        AF.request(url).responseJSON { responce in
-            
-            let decoder = JSONDecoder()
-            
-            if let data = try? decoder.decode(EmailedResult.self, from: responce.data!){
-                self.mostEmaileds = data.emaileds ?? []
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
-    func requestMostShared() {
-        let url = "\(Constants.Network.mostSharedURL)\(Constants.Network.apiKey)"
-        AF.request(url).responseJSON { responce in
-            
-            let decoder = JSONDecoder()
-            
-            if let data = try? decoder.decode(SharedResult.self, from: responce.data!){
-                self.mostShareds = data.shareds ?? []
-                self.tableView.reloadData()
-            }
-        }
+        NetworkManager.shared.requestMostEmailed(completion: { mostEmaileds in
+            self.mostEmaileds = mostEmaileds
+            self.tableView.reloadData()
+        })
+        
+        NetworkManager.shared.requestMostShared(completion: { mostShareds in
+            self.mostShareds = mostShareds
+            self.tableView.reloadData()
+        })
+        
+        
     }
 }
 

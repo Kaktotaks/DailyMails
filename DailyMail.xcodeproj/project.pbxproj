@@ -40,6 +40,7 @@
 		E47A517F27078C8500C8BD51 /* EmailedRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A517E27078C8500C8BD51 /* EmailedRealm.swift */; };
 		E47A518127078C9300C8BD51 /* SharedRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A518027078C9300C8BD51 /* SharedRealm.swift */; };
 		E47A5183270862D100C8BD51 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A5182270862D100C8BD51 /* Constants.swift */; };
+		E47A518527087C3500C8BD51 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A518427087C3500C8BD51 /* NetworkManager.swift */; };
 		F8FC5EA286423B1A3FDCFD65 /* Pods_DailyMail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E86CA96D80E6AEAC1C5EF3 /* Pods_DailyMail.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,7 @@
 		E47A517E27078C8500C8BD51 /* EmailedRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailedRealm.swift; sourceTree = "<group>"; };
 		E47A518027078C9300C8BD51 /* SharedRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedRealm.swift; sourceTree = "<group>"; };
 		E47A5182270862D100C8BD51 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E47A518427087C3500C8BD51 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 		E43F4F1727030BB50028E3EF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E47A518627087C3F00C8BD51 /* Managers */,
 				E43F4F33270320A90028E3EF /* Cells */,
 				E43F4F73270711890028E3EF /* DetailsViewControllers */,
 				E43F4EF22703050E0028E3EF /* MediaViewController.swift */,
@@ -298,6 +301,14 @@
 				E47A518027078C9300C8BD51 /* SharedRealm.swift */,
 			);
 			path = RealmModels;
+			sourceTree = "<group>";
+		};
+		E47A518627087C3F00C8BD51 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				E47A518427087C3500C8BD51 /* NetworkManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -435,6 +446,7 @@
 				E43F4EF12703050E0028E3EF /* SceneDelegate.swift in Sources */,
 				E43F4F69270620510028E3EF /* MostViewedDetailsViewController.swift in Sources */,
 				E47A51742707592C00C8BD51 /* FavouritesViewController.swift in Sources */,
+				E47A518527087C3500C8BD51 /* NetworkManager.swift in Sources */,
 				E47A517F27078C8500C8BD51 /* EmailedRealm.swift in Sources */,
 				E43F4F22270310AE0028E3EF /* ViewedResult.swift in Sources */,
 				E43F4F2B270315930028E3EF /* EmailedMediaMetadata.swift in Sources */,
