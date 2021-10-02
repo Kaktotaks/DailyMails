@@ -33,16 +33,7 @@ class MostEmailedDetailsViewController: UIViewController {
         self.bylineLabel.text = self.mostEmailed?.byline
         self.publisherLabel.text = self.mostEmailed?.source
         self.titleLabel.text = self.mostEmailed?.title
-    
-        if let posterPath = self.mostEmailedMedia?.url {
-
-            // Created a full link to the image
-            let urlString = posterPath
-
-            // And using the SDWebImage library, we set posterImageView an image, loaded by url
-            self.posterImageView.sd_setImage(with: URL(string: urlString), completed: nil)
-
-        }
+        self.posterImageView.sd_setImage(with: URL(string: Constants.Network.baseURL), completed: nil)
 
         
     }

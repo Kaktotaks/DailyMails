@@ -33,16 +33,9 @@ class MostViewedDetailsViewController: UIViewController {
         self.bylineLabel.text = self.mostViewed?.byline
         self.publisherLabel.text = self.mostViewed?.source
         self.titleLabel.text = self.mostViewed?.title
-    
-        if let posterPath = self.mostViewedMedia?.url {
+        self.posterImageView.sd_setImage(with: URL(string: Constants.Network.baseURL), completed: nil)
 
-            // Created a full link to the image
-            let urlString = posterPath
-
-            // And using the SDWebImage library, we set posterImageView an image, loaded by url
-            self.posterImageView.sd_setImage(with: URL(string: urlString), completed: nil)
-
-        }
+        
 
         
     }

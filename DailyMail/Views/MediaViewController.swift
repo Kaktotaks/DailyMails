@@ -10,27 +10,28 @@ import Alamofire
 import RealmSwift
 
 class MediaViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var mediaSegmentedControl: UISegmentedControl!
     
+    // MARK: DB properties
     var mostVieweds: [Viewed] = []
-//    var viewedMediaMetadatas: [ViewedMediaMetadata] = []
     var mostEmaileds: [Emailed] = []
     var mostShareds: [Shared] = []
     
     let realm = try? Realm()
     
+    //MARK: - Class Life Сycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "DailyMail"
+        self.title = Constants.Titles.mediaTitle
         
-        self.tableView.register(UINib(nibName: "MostViewedTableViewCell", bundle: nil), forCellReuseIdentifier: "MostViewedTableViewCell")
+        self.tableView.register(UINib(nibName: Constants.CellsIDs.mostViewed, bundle: nil), forCellReuseIdentifier: Constants.CellsIDs.mostViewed)
         
-        self.tableView.register(UINib(nibName: "MostEmailedTableViewCell", bundle: nil), forCellReuseIdentifier: "MostEmailedTableViewCell")
+        self.tableView.register(UINib(nibName: Constants.CellsIDs.mostEmailed, bundle: nil), forCellReuseIdentifier: Constants.CellsIDs.mostEmailed)
         
-        self.tableView.register(UINib(nibName: "MostSharedTableViewCell", bundle: nil), forCellReuseIdentifier: "MostSharedTableViewCell")
+        self.tableView.register(UINib(nibName: Constants.CellsIDs.mostShared, bundle: nil), forCellReuseIdentifier: Constants.CellsIDs.mostShared)
         
     }
     
@@ -44,7 +45,7 @@ class MediaViewController: UIViewController {
     }
     
     func requestMostViewed() {
-        let url = "https://api.nytimes.com/svc/mostpopular/v2/viewed/30.json?api-key=vuIfURUfUeJfm6S5iYK17hxXNBPBOQEz"
+        let url = "\(Constants.Network.mostViewedURL)\(Constants.Network.apiKey)"
         AF.request(url).responseJSON { responce in
             
             let decoder = JSONDecoder()
@@ -57,7 +58,7 @@ class MediaViewController: UIViewController {
     }
     
     func requestMostEmailed() {
-        let url = "https://api.nytimes.com/svc/mostpopular/v2/emailed/30.json?api-key=vuIfURUfUeJfm6S5iYK17hxXNBPBOQEz"
+        let url = "\(Constants.Network.mostEmailedURL)\(Constants.Network.apiKey)"
         AF.request(url).responseJSON { responce in
             
             let decoder = JSONDecoder()
@@ -70,7 +71,7 @@ class MediaViewController: UIViewController {
     }
     
     func requestMostShared() {
-        let url = "https://api.nytimes.com/svc/mostpopular/v2/shared/30/facebook.json?api-key=vuIfURUfUeJfm6S5iYK17hxXNBPBOQEz"
+        let url = "\(Constants.Network.mostSharedURL)\(Constants.Network.apiKey)"
         AF.request(url).responseJSON { responce in
             
             let decoder = JSONDecoder()
@@ -108,39 +109,36 @@ extension MediaViewController: UITableViewDataSource {
         switch selectedIndex {
             
         case 0:
-            guard let mostViewedCell = tableView.dequeueReusableCell(withIdentifier: "MostViewedTableViewCell", for: indexPath) as? MostViewedTableViewCell else {
+            guard let mostViewedCell = tableView.dequeueReusableCell(withIdentifier: Constants.CellsIDs.mostViewed, for: indexPath) as? MostViewedTableViewCell else {
                 return UITableViewCell()
             }
             let mostViewedMedia = self.mostVieweds[indexPath.row]
-//            let mostViewedPathString = self.viewedMediaMetadatas.first?.url
-            mostViewedCell.configureWith(imageURL: URL(string: "https://s3-symbol-logo.tradingview.com/new-york-times--600.png"),
-                                                   mostViewedName: mostViewedMedia.title,
-                                                   publishedDateText: mostViewedMedia.published_date,
-                                                   authorName: mostViewedMedia.byline)
+            mostViewedCell.configureWith(imageURL: URL(string: Constants.Network.baseURL),
+                                         mostViewedName: mostViewedMedia.title,
+                                         publishedDateText: mostViewedMedia.published_date,
+                                         authorName: mostViewedMedia.byline)
             return mostViewedCell
             
         case 1:
-            guard let mostEmailedCell = tableView.dequeueReusableCell(withIdentifier: "MostEmailedTableViewCell", for: indexPath) as? MostEmailedTableViewCell else {
+            guard let mostEmailedCell = tableView.dequeueReusableCell(withIdentifier: Constants.CellsIDs.mostEmailed, for: indexPath) as? MostEmailedTableViewCell else {
                 return UITableViewCell()
             }
             let mostEmailedMedia = self.mostEmaileds[indexPath.row]
-//!            let mostEmailedPathString = self.mostEmaileds[indexPath.row].url ?? ""
-            mostEmailedCell.configureWith(imageURL: URL(string: "https://s3-symbol-logo.tradingview.com/new-york-times--600.png"),
-                                                     mostEmailedName: mostEmailedMedia.title,
-                                                     publishedDateText: mostEmailedMedia.published_date,
-                                                     authorName: mostEmailedMedia.byline)
+            mostEmailedCell.configureWith(imageURL: URL(string: Constants.Network.baseURL),
+                                          mostEmailedName: mostEmailedMedia.title,
+                                          publishedDateText: mostEmailedMedia.published_date,
+                                          authorName: mostEmailedMedia.byline)
             return mostEmailedCell
             
         case 2:
-            guard let mostSharedCell = tableView.dequeueReusableCell(withIdentifier: "MostSharedTableViewCell", for: indexPath) as? MostSharedTableViewCell else {
+            guard let mostSharedCell = tableView.dequeueReusableCell(withIdentifier: Constants.CellsIDs.mostShared, for: indexPath) as? MostSharedTableViewCell else {
                 return UITableViewCell()
             }
             let mostSharedMedia = self.mostShareds[indexPath.row]
-//!            let mostSharedPathString = self.mostShareds[indexPath.row].url ?? ""
-            mostSharedCell.configureWith(imageURL: URL(string: "https://s3-symbol-logo.tradingview.com/new-york-times--600.png"),
-                                                   mostSharedName: mostSharedMedia.title,
-                                                   publishedDateText: mostSharedMedia.published_date,
-                                                   authorName: mostSharedMedia.byline)
+            mostSharedCell.configureWith(imageURL: URL(string: Constants.Network.baseURL),
+                                         mostSharedName: mostSharedMedia.title,
+                                         publishedDateText: mostSharedMedia.published_date,
+                                         authorName: mostSharedMedia.byline)
             return mostSharedCell
             
         default:
@@ -158,8 +156,8 @@ extension MediaViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    let selectedIndex = self.mediaSegmentedControl.selectedSegmentIndex
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let selectedIndex = self.mediaSegmentedControl.selectedSegmentIndex
         
         switch selectedIndex {
         case 0:
@@ -190,7 +188,7 @@ extension MediaViewController: UITableViewDelegate {
             
         default:
             break
-    
+            
         }
         
     }
@@ -198,9 +196,9 @@ extension MediaViewController: UITableViewDelegate {
     //MARK:- Appearing cells animation
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
     {
-                let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, 0, -100, 0)
-                cell.layer.transform = rotationTransform
-                cell.alpha = 0.5
+        let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, 0, -100, 0)
+        cell.layer.transform = rotationTransform
+        cell.alpha = 0.5
         
         UIView.animate(withDuration: 0.5) {
             cell.layer.transform = CATransform3DIdentity

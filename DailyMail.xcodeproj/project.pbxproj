@@ -39,6 +39,7 @@
 		E47A517727075FDB00C8BD51 /* ViewedRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A517627075FDB00C8BD51 /* ViewedRealm.swift */; };
 		E47A517F27078C8500C8BD51 /* EmailedRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A517E27078C8500C8BD51 /* EmailedRealm.swift */; };
 		E47A518127078C9300C8BD51 /* SharedRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A518027078C9300C8BD51 /* SharedRealm.swift */; };
+		E47A5183270862D100C8BD51 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47A5182270862D100C8BD51 /* Constants.swift */; };
 		F8FC5EA286423B1A3FDCFD65 /* Pods_DailyMail.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E86CA96D80E6AEAC1C5EF3 /* Pods_DailyMail.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		E47A517627075FDB00C8BD51 /* ViewedRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewedRealm.swift; sourceTree = "<group>"; };
 		E47A517E27078C8500C8BD51 /* EmailedRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailedRealm.swift; sourceTree = "<group>"; };
 		E47A518027078C9300C8BD51 /* SharedRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedRealm.swift; sourceTree = "<group>"; };
+		E47A5182270862D100C8BD51 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				E43F4F73270711890028E3EF /* DetailsViewControllers */,
 				E43F4EF22703050E0028E3EF /* MediaViewController.swift */,
 				E47A51732707592C00C8BD51 /* FavouritesViewController.swift */,
+				E47A5182270862D100C8BD51 /* Constants.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				E43F4F2E2703168E0028E3EF /* SharedMedia.swift in Sources */,
 				E43F4F2A270315930028E3EF /* EmailedMedia.swift in Sources */,
 				E43F4EF32703050E0028E3EF /* MediaViewController.swift in Sources */,
+				E47A5183270862D100C8BD51 /* Constants.swift in Sources */,
 				E43F4F1527030A320028E3EF /* SharedResult.swift in Sources */,
 				E43F4F662705F2DD0028E3EF /* MostSharedTableViewCell.swift in Sources */,
 				E43F4EEF2703050E0028E3EF /* AppDelegate.swift in Sources */,

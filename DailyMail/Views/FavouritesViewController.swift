@@ -22,67 +22,68 @@ class FavouritesViewController: UIViewController {
     @IBOutlet weak var mediaSegmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
+    //MARK: - Class Life Сycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Favourites"
+        self.title = Constants.Titles.favouritesTitle
         
-        self.tableView.register(UINib(nibName: "MostViewedTableViewCell", bundle: nil), forCellReuseIdentifier: "MostViewedTableViewCell")
+        self.tableView.register(UINib(nibName: Constants.CellsIDs.mostViewed, bundle: nil), forCellReuseIdentifier: Constants.CellsIDs.mostViewed)
         
-        self.tableView.register(UINib(nibName: "MostEmailedTableViewCell", bundle: nil), forCellReuseIdentifier: "MostEmailedTableViewCell")
+        self.tableView.register(UINib(nibName: Constants.CellsIDs.mostEmailed, bundle: nil), forCellReuseIdentifier: Constants.CellsIDs.mostEmailed)
         
-        self.tableView.register(UINib(nibName: "MostSharedTableViewCell", bundle: nil), forCellReuseIdentifier: "MostSharedTableViewCell")
+        self.tableView.register(UINib(nibName: Constants.CellsIDs.mostShared, bundle: nil), forCellReuseIdentifier: Constants.CellsIDs.mostShared)
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-            self.mostVieweds = self.getMostVieweds()
-            self.mostEmaileds = self.getMostEmaileds()
-            self.mostShareds = self.getMostShareds()
-            self.tableView.reloadData()
+        self.mostVieweds = self.getMostVieweds()
+        self.mostEmaileds = self.getMostEmaileds()
+        self.mostShareds = self.getMostShareds()
+        self.tableView.reloadData()
     }
     
     //MARK: Privat
-        private func getMostVieweds() -> [Viewed] {
-            
-            var mostVieweds: [Viewed] = []
-            guard let mostViewedsResults = realm?.objects(ViewedRealm.self) else { return [] }
-            for view in mostViewedsResults {
-                let codableVieweds = Viewed(from: view)
-                mostVieweds.append(codableVieweds)
-            }
-            
-            return mostVieweds
+    private func getMostVieweds() -> [Viewed] {
+        
+        var mostVieweds: [Viewed] = []
+        guard let mostViewedsResults = realm?.objects(ViewedRealm.self) else { return [] }
+        for view in mostViewedsResults {
+            let codableVieweds = Viewed(from: view)
+            mostVieweds.append(codableVieweds)
         }
-   
+        
+        return mostVieweds
+    }
+    
     
     //MARK: Privat
-        private func getMostEmaileds() -> [Emailed] {
-            
-            var mostEmaileds: [Emailed] = []
-            guard let mostEmailedsResults = realm?.objects(EmailedRealm.self) else { return [] }
-            for email in mostEmailedsResults {
-                let codableEmaileds = Emailed(from: email)
-                mostEmaileds.append(codableEmaileds)
-            }
-            
-            return mostEmaileds
+    private func getMostEmaileds() -> [Emailed] {
+        
+        var mostEmaileds: [Emailed] = []
+        guard let mostEmailedsResults = realm?.objects(EmailedRealm.self) else { return [] }
+        for email in mostEmailedsResults {
+            let codableEmaileds = Emailed(from: email)
+            mostEmaileds.append(codableEmaileds)
         }
+        
+        return mostEmaileds
+    }
     
     //MARK: Privat
-        private func getMostShareds() -> [Shared] {
-            
-            var mostShareds: [Shared] = []
-            guard let mostSharedsResults = realm?.objects(SharedRealm.self) else { return [] }
-            for shared in mostSharedsResults {
-                let codableShareds = Shared(from: shared)
-                mostShareds.append(codableShareds)
-            }
-            
-            return mostShareds
+    private func getMostShareds() -> [Shared] {
+        
+        var mostShareds: [Shared] = []
+        guard let mostSharedsResults = realm?.objects(SharedRealm.self) else { return [] }
+        for shared in mostSharedsResults {
+            let codableShareds = Shared(from: shared)
+            mostShareds.append(codableShareds)
         }
+        
+        return mostShareds
+    }
     
     
 }
@@ -96,11 +97,11 @@ extension FavouritesViewController: UITableViewDataSource {
         switch selectedIndex {
         case 0:
             
-            let mostViewedCell = tableView.dequeueReusableCell(withIdentifier: "MostViewedTableViewCell", for: indexPath) as! MostViewedTableViewCell
+            let mostViewedCell = tableView.dequeueReusableCell(withIdentifier: Constants.CellsIDs.mostViewed, for: indexPath) as! MostViewedTableViewCell
             
             // UI for mostViewedCell
             let viewedMedia = self.mostVieweds[indexPath.row]
-            mostViewedCell.configureWith(imageURL: URL(string: "https://s3-symbol-logo.tradingview.com/new-york-times--600.png"),
+            mostViewedCell.configureWith(imageURL: URL(string: Constants.Network.baseURL),
                                          mostViewedName: viewedMedia.title,
                                          publishedDateText: viewedMedia.published_date,
                                          authorName: viewedMedia.byline)
@@ -109,24 +110,24 @@ extension FavouritesViewController: UITableViewDataSource {
             
         case 1:
             
-            let mostEmailedCell = tableView.dequeueReusableCell(withIdentifier: "MostEmailedTableViewCell", for: indexPath) as! MostEmailedTableViewCell
+            let mostEmailedCell = tableView.dequeueReusableCell(withIdentifier: Constants.CellsIDs.mostEmailed, for: indexPath) as! MostEmailedTableViewCell
             
             // UI for mostEmailedCell
             let emailedMedia = self.mostEmaileds[indexPath.row]
-            mostEmailedCell.configureWith(imageURL: URL(string: "https://s3-symbol-logo.tradingview.com/new-york-times--600.png"),
-                                         mostEmailedName: emailedMedia.title,
-                                         publishedDateText: emailedMedia.published_date,
-                                         authorName: emailedMedia.byline)
+            mostEmailedCell.configureWith(imageURL: URL(string: Constants.Network.baseURL),
+                                          mostEmailedName: emailedMedia.title,
+                                          publishedDateText: emailedMedia.published_date,
+                                          authorName: emailedMedia.byline)
             
             return mostEmailedCell
             
         case 2:
             
-            let mostSharedCell = tableView.dequeueReusableCell(withIdentifier: "MostSharedTableViewCell", for: indexPath) as! MostSharedTableViewCell
+            let mostSharedCell = tableView.dequeueReusableCell(withIdentifier: Constants.CellsIDs.mostShared, for: indexPath) as! MostSharedTableViewCell
             
             // UI for mostSharedCell
             let sharedMedia = self.mostShareds[indexPath.row]
-            mostSharedCell.configureWith(imageURL: URL(string: "https://s3-symbol-logo.tradingview.com/new-york-times--600.png"),
+            mostSharedCell.configureWith(imageURL: URL(string: Constants.Network.baseURL),
                                          mostSharedName: sharedMedia.title,
                                          publishedDateText: sharedMedia.published_date,
                                          authorName: sharedMedia.byline)
