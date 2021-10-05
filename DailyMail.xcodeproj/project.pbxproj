@@ -160,8 +160,8 @@
 		E43F4F1727030BB50028E3EF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E43F4F38270329460028E3EF /* CustomMediasTableViewCell */,
 				E47A518627087C3F00C8BD51 /* Managers */,
-				E43F4F33270320A90028E3EF /* Cells */,
 				E43F4F73270711890028E3EF /* DetailsViewControllers */,
 				E43F4EF22703050E0028E3EF /* MediaViewController.swift */,
 				E47A51732707592C00C8BD51 /* FavouritesViewController.swift */,
@@ -236,14 +236,6 @@
 				E43F4F2D2703168E0028E3EF /* SharedMediaMetadata.swift */,
 			);
 			path = SharedMedia;
-			sourceTree = "<group>";
-		};
-		E43F4F33270320A90028E3EF /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				E43F4F38270329460028E3EF /* CustomMediasTableViewCell */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		E43F4F38270329460028E3EF /* CustomMediasTableViewCell */ = {
