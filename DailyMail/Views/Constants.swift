@@ -24,9 +24,7 @@ struct Constants {
     }
     
     struct CellsIDs{
-        static let mostViewed = "MostViewedTableViewCell"
-        static let mostEmailed = "MostEmailedTableViewCell"
-        static let mostShared = "MostSharedTableViewCell"
+        static let customMediasTableViewCell = "CustomMediasTableViewCell"
     }
     
 

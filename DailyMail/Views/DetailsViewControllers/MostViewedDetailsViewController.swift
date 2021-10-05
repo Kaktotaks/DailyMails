@@ -34,10 +34,6 @@ class MostViewedDetailsViewController: UIViewController {
         self.publisherLabel.text = self.mostViewed?.source
         self.titleLabel.text = self.mostViewed?.title
         self.posterImageView.sd_setImage(with: URL(string: Constants.Network.baseURL), completed: nil)
-
-        
-
-        
     }
     
     

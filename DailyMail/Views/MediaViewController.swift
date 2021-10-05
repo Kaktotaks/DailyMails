@@ -7,7 +7,6 @@
 
 import UIKit
 import Alamofire
-import RealmSwift
 
 class MediaViewController: UIViewController {
     
@@ -19,19 +18,13 @@ class MediaViewController: UIViewController {
     var mostEmaileds: [Emailed] = []
     var mostShareds: [Shared] = []
     
-    let realm = try? Realm()
-    
     //MARK: - Class Life Сycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = Constants.Titles.mediaTitle
         
-        self.tableView.register(UINib(nibName: Constants.CellsIDs.mostViewed, bundle: nil), forCellReuseIdentifier: Constants.CellsIDs.mostViewed)
-        
-        self.tableView.register(UINib(nibName: Constants.CellsIDs.mostEmailed, bundle: nil), forCellReuseIdentifier: Constants.CellsIDs.mostEmailed)
-        
-        self.tableView.register(UINib(nibName: Constants.CellsIDs.mostShared, bundle: nil), forCellReuseIdentifier: Constants.CellsIDs.mostShared)
+        self.tableView.register(UINib(nibName: Constants.CellsIDs.customMediasTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.CellsIDs.customMediasTableViewCell)
         
     }
     
@@ -52,8 +45,6 @@ class MediaViewController: UIViewController {
             self.mostShareds = mostShareds
             self.tableView.reloadData()
         })
-        
-        
     }
 }
 
@@ -82,34 +73,34 @@ extension MediaViewController: UITableViewDataSource {
         switch selectedIndex {
             
         case 0:
-            guard let mostViewedCell = tableView.dequeueReusableCell(withIdentifier: Constants.CellsIDs.mostViewed, for: indexPath) as? MostViewedTableViewCell else {
+            guard let mostViewedCell = tableView.dequeueReusableCell(withIdentifier: Constants.CellsIDs.customMediasTableViewCell, for: indexPath) as? CustomMediasTableViewCell else {
                 return UITableViewCell()
             }
             let mostViewedMedia = self.mostVieweds[indexPath.row]
             mostViewedCell.configureWith(imageURL: URL(string: Constants.Network.baseURL),
-                                         mostViewedName: mostViewedMedia.title,
+                                         titleName: mostViewedMedia.title,
                                          publishedDateText: mostViewedMedia.published_date,
                                          authorName: mostViewedMedia.byline)
             return mostViewedCell
             
         case 1:
-            guard let mostEmailedCell = tableView.dequeueReusableCell(withIdentifier: Constants.CellsIDs.mostEmailed, for: indexPath) as? MostEmailedTableViewCell else {
+            guard let mostEmailedCell = tableView.dequeueReusableCell(withIdentifier: Constants.CellsIDs.customMediasTableViewCell, for: indexPath) as? CustomMediasTableViewCell else {
                 return UITableViewCell()
             }
             let mostEmailedMedia = self.mostEmaileds[indexPath.row]
             mostEmailedCell.configureWith(imageURL: URL(string: Constants.Network.baseURL),
-                                          mostEmailedName: mostEmailedMedia.title,
+                                          titleName: mostEmailedMedia.title,
                                           publishedDateText: mostEmailedMedia.published_date,
                                           authorName: mostEmailedMedia.byline)
             return mostEmailedCell
             
         case 2:
-            guard let mostSharedCell = tableView.dequeueReusableCell(withIdentifier: Constants.CellsIDs.mostShared, for: indexPath) as? MostSharedTableViewCell else {
+            guard let mostSharedCell = tableView.dequeueReusableCell(withIdentifier: Constants.CellsIDs.customMediasTableViewCell, for: indexPath) as? CustomMediasTableViewCell else {
                 return UITableViewCell()
             }
             let mostSharedMedia = self.mostShareds[indexPath.row]
             mostSharedCell.configureWith(imageURL: URL(string: Constants.Network.baseURL),
-                                         mostSharedName: mostSharedMedia.title,
+                                         titleName: mostSharedMedia.title,
                                          publishedDateText: mostSharedMedia.published_date,
                                          authorName: mostSharedMedia.byline)
             return mostSharedCell

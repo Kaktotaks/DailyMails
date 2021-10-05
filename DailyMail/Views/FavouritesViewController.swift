@@ -28,11 +28,7 @@ class FavouritesViewController: UIViewController {
         
         self.title = Constants.Titles.favouritesTitle
         
-        self.tableView.register(UINib(nibName: Constants.CellsIDs.mostViewed, bundle: nil), forCellReuseIdentifier: Constants.CellsIDs.mostViewed)
-        
-        self.tableView.register(UINib(nibName: Constants.CellsIDs.mostEmailed, bundle: nil), forCellReuseIdentifier: Constants.CellsIDs.mostEmailed)
-        
-        self.tableView.register(UINib(nibName: Constants.CellsIDs.mostShared, bundle: nil), forCellReuseIdentifier: Constants.CellsIDs.mostShared)
+        self.tableView.register(UINib(nibName: Constants.CellsIDs.customMediasTableViewCell, bundle: nil), forCellReuseIdentifier: Constants.CellsIDs.customMediasTableViewCell)
         
     }
     
@@ -97,12 +93,12 @@ extension FavouritesViewController: UITableViewDataSource {
         switch selectedIndex {
         case 0:
             
-            let mostViewedCell = tableView.dequeueReusableCell(withIdentifier: Constants.CellsIDs.mostViewed, for: indexPath) as! MostViewedTableViewCell
+            let mostViewedCell = tableView.dequeueReusableCell(withIdentifier: Constants.CellsIDs.customMediasTableViewCell, for: indexPath) as! CustomMediasTableViewCell
             
             // UI for mostViewedCell
             let viewedMedia = self.mostVieweds[indexPath.row]
             mostViewedCell.configureWith(imageURL: URL(string: Constants.Network.baseURL),
-                                         mostViewedName: viewedMedia.title,
+                                         titleName: viewedMedia.title,
                                          publishedDateText: viewedMedia.published_date,
                                          authorName: viewedMedia.byline)
             
@@ -110,12 +106,12 @@ extension FavouritesViewController: UITableViewDataSource {
             
         case 1:
             
-            let mostEmailedCell = tableView.dequeueReusableCell(withIdentifier: Constants.CellsIDs.mostEmailed, for: indexPath) as! MostEmailedTableViewCell
+            let mostEmailedCell = tableView.dequeueReusableCell(withIdentifier: Constants.CellsIDs.customMediasTableViewCell, for: indexPath) as! CustomMediasTableViewCell
             
             // UI for mostEmailedCell
             let emailedMedia = self.mostEmaileds[indexPath.row]
             mostEmailedCell.configureWith(imageURL: URL(string: Constants.Network.baseURL),
-                                          mostEmailedName: emailedMedia.title,
+                                          titleName: emailedMedia.title,
                                           publishedDateText: emailedMedia.published_date,
                                           authorName: emailedMedia.byline)
             
@@ -123,12 +119,12 @@ extension FavouritesViewController: UITableViewDataSource {
             
         case 2:
             
-            let mostSharedCell = tableView.dequeueReusableCell(withIdentifier: Constants.CellsIDs.mostShared, for: indexPath) as! MostSharedTableViewCell
+            let mostSharedCell = tableView.dequeueReusableCell(withIdentifier: Constants.CellsIDs.customMediasTableViewCell, for: indexPath) as! CustomMediasTableViewCell
             
             // UI for mostSharedCell
             let sharedMedia = self.mostShareds[indexPath.row]
             mostSharedCell.configureWith(imageURL: URL(string: Constants.Network.baseURL),
-                                         mostSharedName: sharedMedia.title,
+                                         titleName: sharedMedia.title,
                                          publishedDateText: sharedMedia.published_date,
                                          authorName: sharedMedia.byline)
             

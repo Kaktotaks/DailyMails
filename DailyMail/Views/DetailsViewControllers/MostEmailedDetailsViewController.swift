@@ -34,7 +34,6 @@ class MostEmailedDetailsViewController: UIViewController {
         self.publisherLabel.text = self.mostEmailed?.source
         self.titleLabel.text = self.mostEmailed?.title
         self.posterImageView.sd_setImage(with: URL(string: Constants.Network.baseURL), completed: nil)
-
         
     }
     

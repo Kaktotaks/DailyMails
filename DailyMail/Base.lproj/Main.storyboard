@@ -310,6 +310,7 @@
         <!--Most Emailed Details View Controller-->
         <scene sceneID="82t-ic-4yQ">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2GE-e0-Xu5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="MostEmailedDetailsViewController" id="8uP-aR-N2H" customClass="MostEmailedDetailsViewController" customModule="DailyMail" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="euc-th-nHB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -445,13 +446,13 @@
                         <outlet property="updatedLabel" destination="IBN-c9-Zsz" id="or4-SM-SGI"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2GE-e0-Xu5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1538" y="64"/>
         </scene>
         <!--Most Shared Details View Controller-->
         <scene sceneID="h7y-03-G0S">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HWe-KS-wQx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="MostSharedDetailsViewController" id="82h-ee-Dob" customClass="MostSharedDetailsViewController" customModule="DailyMail" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aef-87-IFv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -587,7 +588,6 @@
                         <outlet property="updatedLabel" destination="xzU-d6-1hd" id="s9h-xn-8TY"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HWe-KS-wQx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2220" y="64"/>
         </scene>

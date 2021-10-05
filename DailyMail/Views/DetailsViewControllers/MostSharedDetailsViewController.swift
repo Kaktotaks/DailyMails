@@ -34,18 +34,6 @@ class MostSharedDetailsViewController: UIViewController {
         self.publisherLabel.text = self.mostShared?.source
         self.titleLabel.text = self.mostShared?.title
         self.posterImageView.sd_setImage(with: URL(string: Constants.Network.baseURL), completed: nil)
-    
-//        if let posterPath = self.mostSharedMedia?.url {
-//
-//            // Created a full link to the image
-//            let urlString = posterPath
-//
-//            // And using the SDWebImage library, we set posterImageView an image, loaded by url
-//            self.posterImageView.sd_setImage(with: URL(string: urlString), completed: nil)
-//
-//        }
-        
-
         
     }
     
